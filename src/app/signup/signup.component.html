@@ -1,0 +1,59 @@
+<div class="container" style="margin-top: 10%">
+<form class="col-md-7 container mt-5 signup_form" [formGroup]="signup" (ngSubmit)="OnSubmit()">
+  <h4 style="text-align: center;">signup!</h4>
+    <div class="container mt-4 mb-4">
+    <div class="row pb-2">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First name" formControlName="FirstName">
+        <div *ngIf="control.FirstName.touched || control.FirstName.dirty">
+          <span *ngIf="control.FirstName.errors">Please fill out this field</span>
+        </div>
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last name" formControlName="LastName">
+        <div *ngIf="control.LastName.touched || control.LastName.dirty">
+          <span *ngIf="control.LastName.errors">Please fill out this field</span>
+        </div>
+      </div>
+    </div>
+    <div class="pb-2">
+        <input type="text" class="form-control" placeholder="Email" formControlName="Email">
+        <div *ngIf="control.Email.touched || control.Email.dirty">
+          <span *ngIf="control.Email.errors">Please fill out this field</span>
+        </div>
+    </div>
+    <div class="pb-2">
+        <input type="password" class="form-control" placeholder="Password" formControlName="Password">
+        <div *ngIf="control.Password.touched || control.Password.dirty">
+          <span *ngIf="control.Password.errors">Please fill out this field</span>
+        </div>
+    </div>
+    <div class="pb-2">
+        <input type="text" class="form-control" placeholder="Phone No." formControlName="Phone">
+        <div *ngIf="control.Phone.touched || control.Phone.dirty">
+          <span *ngIf="control.Phone.errors">Please fill out this field</span>
+        </div>
+    </div>
+    <div>
+        <input type="text" class="form-control" placeholder="Address" formControlName="Address">
+        <div *ngIf="control.Address.touched || control.Address.dirty">
+          <span *ngIf="control.Address.errors">Please fill out this field</span>
+        </div>
+    </div>
+
+    <div class="pt-1">
+        <label for="inlineFormCustomSelectPref"></label>
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" formControlName="Gender">
+          <option selected value="">Gender</option>
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+          <option value="3">Custom</option>
+        </select>
+        </div>
+    
+      </div>
+      <div class="btnn">
+        <button type="submit" class="btn btn-success mb-2" [disabled]="!signup.valid">Submit</button>
+      </div>
+  </form>
+  </div>

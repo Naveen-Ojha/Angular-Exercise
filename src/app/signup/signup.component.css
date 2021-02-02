@@ -1,0 +1,12 @@
+.signup_form{
+    border: 1px solid black;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 5px 5px #eeeeee;
+}
+.custom-select{
+    width: -webkit-fill-available;
+    margin-right: 0px !important;
+}
+.btnn{
+    text-align: center;
+}
