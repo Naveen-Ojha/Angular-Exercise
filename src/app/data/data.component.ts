@@ -8,27 +8,32 @@ import { Observable } from 'rxjs';
   styleUrls: ['./data.component.css']
 })
 export class DataComponent implements OnInit {
- 
- url:any='https://jsonplaceholder.typicode.com/photos?albumId=1'
- userdata:any=[];
 
-  constructor(private http:HttpClient) { }
+  url: any = "https://jsonplaceholder.typicode.com/photos?albumId=1";
+  search:string="";
+  userdata: any = [];
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-      this.getData(this.url).subscribe(d=>{
-       this.userdata=d;
-       console.log(d);
-     });
-    }
-
-    getData(url:any):Observable<any[]>
-    {
-      return this.http.get<any[]>(url)
-    }
-  
+    this.getData(this.url).subscribe(d => {
+      this.userdata = d;
+      console.log(d);
+    });
   }
 
+  getData(url: any): Observable<any[]> {
+    return this.http.get<any[]>(url)
+  }
+
+  gg(x:any){
+    this.search = x;
+    }
   
-  
+
+}
+
+
+
 
 

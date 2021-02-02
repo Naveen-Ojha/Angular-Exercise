@@ -1,17 +1,22 @@
+<nav class="navbar navbar-light bg-light pb-3">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" name="kk" [(ngModel)]="search"  placeholder="Search Title" aria-label="Search">
+    </form>
+    <button class="btn btn-warning" routerLink="/login">Logout</button>
+  </nav>
 <table>
     <tr>
-        <th class="text_center">albumId</th>
-        <th class="text_center">id</th>
-        <th class="text_center">title</th>
-        <th class="text_center">url</th>
-        <th class="text_center">thumbnailUrl</th>
+        <th class="text_center">Album ID</th>
+        <th class="text_center">ID</th>
+        <th class="text_center">Title</th>
+        <th class="text_center">Thumbnail</th>
+        <th class="text_center">Images</th>
     </tr>
-    <tr *ngFor="let d of userdata">
+    <tr *ngFor="let d of userdata|filter:search">
         <td class="text_center">{{d.albumId}}</td>
         <td class="text_center">{{d.id}}</td>
         <td class="text_center">{{d.title}}</td>
-        <td class="text_center"><img src ="{{d.url}}" width="70" height="70"></td>
-        <td class="text_center"><img src ="{{d.thumbnailUrl}}" width="70" height="70"></td>
-        
+        <td class="text_center"><img src="{{d.thumbnailUrl}}" width="70" height="70"></td>
+        <td class="text_center"><img src="{{d.url}}" width="70" height="70"></td>
     </tr>
 </table>

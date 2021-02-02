@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import { DataRoutingModule } from './data-routing.module';
 import { DataComponent } from './data.component';
+import { SearchPipe } from '../search.pipe';
 
 
 @NgModule({
-  declarations: [DataComponent],
+  declarations: [DataComponent,SearchPipe],
   imports: [
     CommonModule,
     DataRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class DataModule { }
