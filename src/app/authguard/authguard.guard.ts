@@ -20,7 +20,7 @@ export class AuthguardGuard implements CanActivate {
   }
   isLogin(): boolean {
     let id: any = (localStorage.getItem("user-data"));
-    if (id > 0) {
+    if(id) {
       return true;
     }
     else {

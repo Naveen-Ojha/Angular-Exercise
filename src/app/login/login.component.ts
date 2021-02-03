@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         this.route.navigate(['/data'])
     
     else
-      alert("incorect user and password");
+      alert("Incorect Username And Password");
     
    }
  

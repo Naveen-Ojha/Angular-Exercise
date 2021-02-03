@@ -26,7 +26,7 @@ export class SignupComponent implements OnInit {
    console.log(data);
 
   var user= localStorage.setItem("user-data",JSON.stringify(data));
-  user = alert("Submited successful");
+  user = alert("Submited Successful");
   }
 
  
